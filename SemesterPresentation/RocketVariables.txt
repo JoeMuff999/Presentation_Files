@@ -1,0 +1,48 @@
+Falcon 9 Full thrust is what i shall do.
+
+
+These are all input variables? do i want to change force on the fly, or do i want to keep it the same and just multiply by angles?
+
+Final Plan (for now): Thrust will stay the same with init_thrust variable, thrust[0] will be x thrust, thrust[1] will be y thrust. thrust[0] = cos(init_angle)
+thrust [1] = cos(init_angle) --- for initializing
+
+later, these will be set to thrust values where init_angle --> angle.
+
+---------
+
+initial state variables VVVV
+
+init_thrust = initial thrust (will always be the same) 
+
+Velocity0: idk why but its just gonna be 0 0
+
+Position0: same as before, just gonna be 0 0
+
+init_angle = starts 0
+
+mass = use for f =ma calculations.
+
+gravityForce = mass * accelGrav, use for force calculations with thrust	
+
+-------- 
+
+changing variables VVVV
+
+Thrust (array of 2 nums): x and y thrust (take init_thrust * sin/cos(init_angle).
+
+drag = just basic drag coefficient, gonna leave it out at first though, xy variables, no point initializing though, comment it out
+
+acc= will change with the various forces for both x and y
+
+vel = change based on acceleration
+
+pos = acknowledge existence :)
+
+angle = will just set it an arbitrary point to simplify initial calculations then later will change it to be more realistic.
+------
+
+time = just second based run time
+
+impact = 0 or 1 for false or true (no bool wow)
+
+impactTime = name

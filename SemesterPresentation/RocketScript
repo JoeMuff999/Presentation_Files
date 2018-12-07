@@ -1,0 +1,40 @@
+import bpy
+import mathutils
+import os
+import math
+cube= bpy.data.objects["Cylinder"]
+
+cube.location = (0,0,12)
+#dataFile= open("rocketDataTrick.txt", "r")
+counter = 0
+x = 0
+y = 0
+angle =0
+frame = 0
+
+with open ('C:\\Users\\Joey\\Desktop\\rocketDataTrick.txt') as f:
+    for _ in range(1):
+        next(f)
+    for line in open('C:\\Users\\Joey\\Desktop\\rocketDataTrick.txt'):
+    
+        line = line.rstrip("\n")
+        line = line.strip()
+   
+        counter+=1
+        #try:   
+        t,x,y,angle= line.split(",")
+        bpy.context.scene.frame_set(frame)
+        x = float(x)
+        y = float(y)
+        angle = float(angle);
+        cube.location = (x,0,y)
+        cube.rotation_euler = (0,angle -1.5707963267948966192313216916398,2.63545)
+        cube.keyframe_insert(data_path="location")
+        cube.keyframe_insert(data_path="rotation_euler")
+        frame+=1
+        #except:
+            #print(counter)
+    
+#print(dataFile.read())
+
+ 
